@@ -6,7 +6,7 @@
 
 ![Снимок экрана от 2023-01-05 03-14-41](https://user-images.githubusercontent.com/107764041/210673826-f45dce3c-80ba-45d5-b22f-12286873f3d2.png)
 
-[Ссылка на GitHub Pages](https://qann1st.github.io/mesto-react/)
+[Ссылка на GitHub Pages](https://qann1st.github.io/react-mesto-auth/)
 
 ## Функционал:
 
