@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Проект: "Mesto"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание:
 
-## Available Scripts
+"Mesto" - интерактивный сайт, с местами России, сделанный с использованием полулярной библиотеки для разработки интерфейсов React.
 
-In the project directory, you can run:
+![Снимок экрана от 2023-01-05 03-14-41](https://user-images.githubusercontent.com/107764041/210673826-f45dce3c-80ba-45d5-b22f-12286873f3d2.png)
 
-### `npm start`
+[Ссылка на GitHub Pages](https://qann1st.github.io/mesto-react/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Функционал:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Редактирование профиля
+- Попап картинки
+- Добавление новых мест
+- Валидация форм
 
-### `npm test`
+## Используемые технологии:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ReactJS
+- Nested БЭМ
+- Методология БЭМ
+- Git
+- HTML/CSS
+- Адаптивная вёрстка
+- Flex/Grid
 
-### `npm run build`
+## Сборка и разработка проекта
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Запускает режим разработки.
+Откройте [http://localhost:3000](http://localhost:3000) для просмотра приложения в браузере.
+Перезагрузка происходит автоматически, при сохранении.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm run build
+Запуск сборки проекта в production режиме, проект будет собран в папку build.

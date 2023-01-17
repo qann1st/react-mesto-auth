@@ -1,0 +1,10 @@
+.header {
+  padding: 45px 0 40px;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        padding: 28px 0 0;
+    }
+}
