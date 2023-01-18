@@ -59,7 +59,7 @@ function App() {
           <Route path="*" element={<HomePage currentUser={currentUser} setCurrentUser={setCurrentUser} onLogout={handleLogout} />} />
         </Route>
         <Route path="/login" element={<Login onLogin={handleLogin} email={email} setEmail={setEmail} />} />
-        <Route path="/register" element={<Register />} email={email} setEmail={setEmail} />
+        <Route path="/register" element={<Register email={email} setEmail={setEmail} />}  />
       </Routes>
     </CurrentUserContext.Provider>
   );

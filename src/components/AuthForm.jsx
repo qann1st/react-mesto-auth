@@ -24,9 +24,8 @@ function AuthForm({ title, btnTitle, isRegister, onAuth, email, setEmail }) {
       </button>
       {isRegister ? (
         <p className="auth__link">
-          Уже зарегистрированы?
           <Link className="auth__link_link" to="/login">
-            Войти
+            Уже зарегистрированы? Войти
           </Link>
         </p>
       ) : (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import AuthForm from '../components/AuthForm';
 import Header from '../components/Header';
 import AuthPopup from '../components/popups/AuthPopup';
@@ -37,6 +37,8 @@ function Register({ email, setEmail }) {
           btnTitle="Зарегистрироваться"
           isRegister={true}
           onAuth={handleRegister}
+          email={email}
+          setEmail={setEmail}
         />
         <AuthPopup
           isGood={isGood}
