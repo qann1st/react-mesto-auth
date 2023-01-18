@@ -4,6 +4,17 @@ class Api {
     this._options = options;
   }
 
+  setToken(token) {
+    if (!this._options.headers) this._options.headers = {};
+    this._options.headers.authorization = token;
+  }
+
+  removeToken() {
+    if (this._options?.headers?.authorization) {
+      delete this._options?.headers?.authorization
+    }
+  }
+
   async _fetch(path, method = 'GET', body) {
     const opt = { ...this._options, method };
     if (body)
@@ -62,3 +73,28 @@ export const api = new Api({
     'Content-Type': 'application/json',
   },
 });
+
+class AuthApi extends Api {
+  constructor() {
+    super({
+      baseUrl: 'https://auth.nomoreparties.co/',
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
+  }
+
+  newUser(email, password) {
+    return this._fetch('signup', 'POST', {"password": password, "email": email})
+  }
+
+  loginUser(email, password) {
+    return this._fetch('signin', 'POST', {"password": password, "email": email})
+  }
+
+  authUser() {
+    return this._fetch('users/me', 'GET')
+  }
+}
+
+export const authApi = new AuthApi()

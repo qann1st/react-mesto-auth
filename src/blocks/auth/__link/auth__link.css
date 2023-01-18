@@ -3,10 +3,16 @@
   font-size: 14px;
   line-height: 17px;
   margin: 0;
-  padding: 0;
+  padding: 0 0 15px;
 }
 
 .auth__link_link {
   color: #fff;
   text-decoration: none;
+  opacity: 1;
+  transition: 0.2s opacity ease-in-out;
+}
+
+.auth__link_link:hover {
+  opacity: 0.6;
 }

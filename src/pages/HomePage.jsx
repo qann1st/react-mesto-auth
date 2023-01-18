@@ -8,13 +8,14 @@ import PopupEditProfile from '../components/popups/PopupEditProfile';
 import PopupNewPlace from '../components/popups/PopupNewPlace';
 import { api } from '../utils/Api';
 
-function HomePage({ currentUser, setCurrentUser }) {
+function HomePage({ currentUser, setCurrentUser, onLogout }) {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [cards, setCards] = React.useState([]);
   const [selectedCard, setSelectedCard] = React.useState(null);
   const [currentAvatar, setCurrentAvatar] = React.useState(null);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
     api.getInitialCards().then((cards) => {
@@ -74,7 +75,23 @@ function HomePage({ currentUser, setCurrentUser }) {
   return (
     <div className="page">
       <div className="wrapper">
-        <Header />
+        <div className={`header__menu ${isOpen ? 'header__menu_opened' : ''}`}>
+          <p className="header__email">{localStorage.getItem('email')}</p>
+          <button className="header__nav_exit" onClick={() => onLogout()}>
+            Выйти
+          </button>
+        </div>
+        <Header>
+          <div className="header__nav">
+            <p className="header__email">{localStorage.getItem('email')}</p>
+            <button className="header__nav_exit" onClick={() => onLogout()}>
+              Выйти
+            </button>
+          </div>
+          <button
+            className={isOpen ? 'header__close_menu' : 'header__open_menu'}
+            onClick={() => setIsOpen(!isOpen)}></button>
+        </Header>
         <Main
           onEditProfile={handleEditProfileClick}
           onAddPlace={handleAddPlaceClick}

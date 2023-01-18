@@ -1,0 +1,35 @@
+.popup__status {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 26px 0;
+}
+
+.popup__status_ok {
+  background-image: url(../../../images/good.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 120px;
+  height: 120px;
+}
+
+.popup__status_bad {
+  background-image: url(../../../images/error.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 120px;
+  height: 120px;
+}
+
+.popup__status_text {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
