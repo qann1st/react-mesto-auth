@@ -1,9 +1,9 @@
 .header__menu {
   display: none;
   color: #fff;
-  border-bottom: 1px solid #545454;
   text-align: center;
   width: 100%;
+  border-bottom: 1px solid #545454;
 }
 
 .header__open_menu {
@@ -51,7 +51,7 @@
 .header__menu_opened {
   display: flex;
   gap: 18px;
-  padding: 40px;
+  padding: 40px 0;
   align-items: center;
 }
 
