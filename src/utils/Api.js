@@ -4,17 +4,6 @@ class Api {
     this._options = options;
   }
 
-  setToken(token) {
-    if (!this._options.headers) this._options.headers = {};
-    this._options.headers.authorization = token;
-  }
-
-  removeToken() {
-    if (this._options?.headers?.authorization) {
-      delete this._options?.headers?.authorization
-    }
-  }
-
   async _fetch(path, method = 'GET', body) {
     const opt = { ...this._options, method };
     if (body)
@@ -27,6 +16,18 @@ class Api {
     if (response.ok) return json;
 
     throw new Error(json.message);
+  }
+}
+
+class DataApi extends Api {
+  constructor() {
+    super({
+      baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-52/',
+      headers: {
+        authorization: '47016496-8e67-44e3-804c-b828c4f61e69',
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
   getInitialCards() {
@@ -66,35 +67,43 @@ class Api {
   }
 }
 
-export const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-52/',
-  headers: {
-    authorization: '47016496-8e67-44e3-804c-b828c4f61e69',
-    'Content-Type': 'application/json',
-  },
-});
-
 class AuthApi extends Api {
   constructor() {
     super({
       baseUrl: 'https://auth.nomoreparties.co/',
       headers: {
-        "Content-Type": "application/json",
-      }
-    })
+        'Content-Type': 'application/json',
+      },
+    });
+    const token = localStorage.getItem('jwt');
+    if (token) {
+      this.setToken('Bearer ' + token);
+    }
+  }
+
+  setToken(token) {
+    if (!this._options.headers) this._options.headers = {};
+    this._options.headers.authorization = token;
+  }
+
+  removeToken() {
+    if (this._options?.headers?.authorization) {
+      delete this._options?.headers?.authorization;
+    }
   }
 
   newUser(email, password) {
-    return this._fetch('signup', 'POST', {"password": password, "email": email})
+    return this._fetch('signup', 'POST', { password: password, email: email });
   }
 
   loginUser(email, password) {
-    return this._fetch('signin', 'POST', {"password": password, "email": email})
+    return this._fetch('signin', 'POST', { password: password, email: email });
   }
 
   authUser() {
-    return this._fetch('users/me', 'GET')
+    return this._fetch('users/me', 'GET');
   }
 }
 
-export const authApi = new AuthApi()
+export const authApi = new AuthApi();
+export const api = new DataApi();
