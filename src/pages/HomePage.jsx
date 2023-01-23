@@ -73,7 +73,7 @@ function HomePage({ currentUser, setCurrentUser, onLogout }) {
   }
 
   return (
-    <div className="page">
+    <>
       <div className="wrapper">
         <div className={`header__menu ${isOpen ? 'header__menu_opened' : ''}`}>
           <p className="header__email">{localStorage.getItem('email')}</p>
@@ -126,7 +126,7 @@ function HomePage({ currentUser, setCurrentUser, onLogout }) {
         onUpdateAvatar={handleUpdateAvatar}
       />
       <ImagePopup card={selectedCard} name={'image'} onClose={closeAllPopups} />
-    </div>
+    </>
   );
 }
 

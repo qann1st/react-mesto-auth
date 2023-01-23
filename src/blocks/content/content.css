@@ -3,9 +3,14 @@
   padding: 30px;
 }
 
+@media screen and (max-width: 1023px) {
+  .content {
+    box-sizing: border-box;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .content {
     padding: 0 19px;
-    box-sizing: border-box;
   }
 }

@@ -25,29 +25,27 @@ function Register({ email, setEmail }) {
   }
 
   return (
-    <div className="page">
-      <div className="wrapper">
-        <Header>
-          <Link to="/login" className="header__link">
-            Войти
-          </Link>
-        </Header>
-        <AuthForm
-          title="Регистрация"
-          btnTitle="Зарегистрироваться"
-          isRegister={true}
-          onAuth={handleRegister}
-          email={email}
-          setEmail={setEmail}
-        />
-        <AuthPopup
-          isGood={isGood}
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          email={email}
-          setEmail={setEmail}
-        />
-      </div>
+    <div className="wrapper">
+      <Header>
+        <Link to="/login" className="header__link">
+          Войти
+        </Link>
+      </Header>
+      <AuthForm
+        title="Регистрация"
+        btnTitle="Зарегистрироваться"
+        isRegister={true}
+        onAuth={handleRegister}
+        email={email}
+        setEmail={setEmail}
+      />
+      <AuthPopup
+        isGood={isGood}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        email={email}
+        setEmail={setEmail}
+      />
     </div>
   );
 }
